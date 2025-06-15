@@ -30,7 +30,7 @@ h1 {
 .box {
   background-color: #aaa7a7;
   height: 10rem;
-  width: 8.4rem;
+  width: 8rem;
   border-radius: 0.9rem;
   display: flex;
   justify-content: center;
@@ -43,7 +43,7 @@ h1 {
   height: 3rem;
   width: 6rem;
   position: absolute;
-  top: 50rem;
+  top: 49rem;
   transform: translate(-50%);
   border-radius: 2rem;
   color: white;
