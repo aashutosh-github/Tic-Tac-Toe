@@ -1,3 +1,7 @@
+Visit the project at : https://aashutosh-github.github.io/Tic-Tac-Toe/
+
+Please raise issues if you encounter any.
+
 I made this project to improve my javascript logic building skills and i must say i have learnt a lot from this.
 
 Some of the things i learnt are : 
