@@ -11,7 +11,7 @@ body {
 }
 .container {
   height: 33.1rem;
-  max-width: 29rem;
+  max-width: 25rem;
   position: absolute;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
