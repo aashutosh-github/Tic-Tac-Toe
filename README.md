@@ -5,3 +5,5 @@ Some of the things i learnt are :
 2. I also learnt about how event listeners have to be properly removed otherwise they can stack and cause problems.
 3. I also learnt that event listeners use references to the callbacks and therefore we can only remove a listener if it is named.
 4. While comparing arrays inside the checkWinner() function, i compared the arrays by reference, so while it may seem like JS does not return true for different arrays having all exactly same values, I compared the memory address of the arrays.
+
+I also uploaded the entire finished file at once and did not want the commit messages to be the same on all of the files so i made minor changes and added random commit messages 😅
