@@ -21,7 +21,7 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  column-gap: 0.5rem;
+  column-gap: 0.7rem;
 }
 h1 {
   margin-top: 2rem;
@@ -43,7 +43,7 @@ h1 {
   height: 3rem;
   width: 6rem;
   position: absolute;
-  top: 47rem;
+  top: 44rem;
   transform: translate(-50%);
   border-radius: 2rem;
   color: white;
