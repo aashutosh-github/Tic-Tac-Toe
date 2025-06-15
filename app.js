@@ -1,23 +1,5 @@
+const resetButton = document.querySelector("#reset");
 const boxes = document.querySelectorAll(".box");
-
-let turnX = true;
-
-boxes.forEach((box) => {
-  box.addEventListener(
-    "click",
-    () => {
-      if (turnX) {
-        box.innerText = "X";
-        turnX = false;
-      } else {
-        box.innerText = "O";
-        turnX = true;
-      }
-    },
-    { once: true }
-  );
-});
-
 const winningPatterns = [
   [1, 2, 3],
   [4, 5, 6],
@@ -28,6 +10,69 @@ const winningPatterns = [
   [1, 5, 9],
   [3, 5, 7],
 ];
+let patternX = [];
+let patternO = [];
+let turnX = true;
 
-const patternX = [];
-const patternO = [];
+function addingListeners() {
+  boxes.forEach((box) => {
+    box.addEventListener("click", handleClicks);
+  });
+}
+
+function reset() {
+  turnX = true;
+  patternX = [];
+  patternO = [];
+  boxes.forEach((box) => {
+    box.innerText = "";
+    box.removeEventListener("click", handleClicks);
+  });
+  addingListeners();
+}
+
+function checkWinner(playerPattern) {
+  for (let pattern of winningPatterns) {
+    if (pattern.every((id) => playerPattern.includes(id))) {
+      const winner = playerPattern == patternX ? "X" : "O";
+      setTimeout(() => {
+        alert(`The winner is ${winner}`);
+        reset();
+      }, 100);
+      return;
+    }
+  }
+
+  if (patternX.length + patternO.length === 9) {
+    setTimeout(() => {
+      alert(`This is a draw!`);
+      reset();
+    }, 100);
+  }
+}
+
+function handleClicks(event) {
+  const box = event.target;
+
+  if (box.innerText != "") return;
+
+  if (turnX) {
+    box.innerText = "X";
+    patternX.push(Number(box.id));
+    checkWinner(patternX);
+    turnX = false;
+  } else {
+    box.innerText = "O";
+    patternO.push(Number(box.id));
+    checkWinner(patternO);
+    turnX = true;
+  }
+
+  box.removeEventListener("click", handleClicks);
+}
+
+addingListeners();
+
+resetButton.addEventListener("click", () => {
+  reset();
+});
