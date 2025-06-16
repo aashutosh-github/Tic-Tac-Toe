@@ -81,3 +81,4 @@ addingListeners();
 resetButton.addEventListener("click", () => {
   reset();
 });
+
