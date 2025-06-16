@@ -10,4 +10,3 @@ Some of the things i learnt are :
 3. I also learnt that event listeners use references to the callbacks and therefore we can only remove a listener if the callback is named.
 4. While comparing arrays inside the checkWinner() function, i compared the arrays by reference, so while it may seem like JS does not return true for different arrays having all exactly same values, I compared the memory address of the arrays.
 
-I also uploaded the entire finished file at once and did not want the commit messages to be the same on all of the files so i made minor changes and added random commit messages 😅
