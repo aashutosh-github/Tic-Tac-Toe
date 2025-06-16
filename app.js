@@ -27,6 +27,7 @@ function reset() {
   boxes.forEach((box) => {
     box.innerText = "";
     box.removeEventListener("click", handleClicks);
+    box.classList.remove("shadows", "colorX", "colorO");
   });
   addingListeners();
 }
@@ -54,15 +55,19 @@ function checkWinner(playerPattern) {
 function handleClicks(event) {
   const box = event.target;
 
+  box.classList.add("shadows");
+
   if (box.innerText != "") return;
 
   if (turnX) {
     box.innerText = "X";
+    box.classList.add("colorX");
     patternX.push(Number(box.id));
     checkWinner(patternX);
     turnX = false;
   } else {
     box.innerText = "O";
+    box.classList.add("colorO");
     patternO.push(Number(box.id));
     checkWinner(patternO);
     turnX = true;
